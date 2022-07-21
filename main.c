@@ -6,6 +6,14 @@
 
 #define PORT 4000
 
+typedef struct __packet{
+ uint16_t type; //Tipo do pacote (p.ex. DATA | CMD)
+ uint16_t seqn; //Número de sequência
+ uint16_t length; //Comprimento do payload
+ uint16_t timestamp; // Timestamp do dado
+ const char* _payload; //Dados da mensagem
+} packet;
+
 int main(int argc, char *argv[])
 {
 	if (argc == 1) {
